@@ -81,10 +81,6 @@ const getComment = function(url) {
         const skin = element.skinResults;
         const score = element.score;
         const id = element.entityId;
-        // if (Number(score) === 0) {
-        //     console.log('!!!!');
-        //     console.log(element);
-        // }
         if (name[skin] !== undefined && score !== undefined && Number(score) !== 0) {
             commentList.push({
                 id: id,
@@ -105,20 +101,6 @@ const getComments = function(url) {
     return commentList;
 }
 
-// class CommentCount {
-//     constructor(skin, count) {
-//         this.skin = skin;
-//         this.count = count;
-//     } 
-// }
-
-// class Good {
-//     constructor(id, commentCount) {
-//         this.id = id;
-//         this.commentCount = commentCount;
-//     }
-// }
-
 function strMapToObj(strMap) {
     let obj = Object.create(null);
     for (let [k,v] of strMap) {
@@ -134,7 +116,6 @@ const countComment = function(commentList) {
         let countMap = rootMap.has(id) ? rootMap.get(id) : new Map();
         const skin = element.skin, score = element.score;
         let scoreCount = countMap.has(skin) ? countMap.get(skin) : [0, 0, 0, 0, 0];
-        // if (Number(score) === 0) console.log("!!!"+skin+"!!!");
         ++ scoreCount[Number(score) - 1];
         countMap.set(skin, scoreCount);
         rootMap.set(id, countMap);

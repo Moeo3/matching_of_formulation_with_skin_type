@@ -9,6 +9,8 @@ FILES INCLUDE:
 ./algorithm/select.py	-- file used to select some training or test units from data.
 
 ./algorithm/train.py	-- file used to implement fitted algorithms.
+
+./damo.sh	-- demonstrate file.
 ```
 ```
 ./data/count.json	-- data that records the count of each score of different cosmetics by different skin types.
